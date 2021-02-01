@@ -3,25 +3,22 @@
          xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
     <modelVersion>4.0.0</modelVersion>
-
     <groupId>zexin.com</groupId>
     <artifactId>zexin-clound</artifactId>
     <version>1.0-SNAPSHOT</version>
-
     <modules>
         <module>zexin-cloud-common</module>
         <module>zexin-cloud-user</module>
         <module>zexin-cloud-video</module>
         <module>zexin-cloud-order</module>
     </modules>
-
     <!-- 一般来说父级项目的packaging都为pom，packaging默认类型jar类型-->
     <packaging>pom</packaging>
-
     <properties>
         <java.version>1.8</java.version>
+        <maven.compiler.source>1.8</maven.compiler.source>
+        <maven.compiler.target>1.8</maven.compiler.target>
     </properties>
-
     <dependencyManagement>
         <dependencies>
             <!--https://mvnrepository.com/artifact/org.springframework.boot/spring-boot-dependencies/2.3.3.RELEASE-->
@@ -48,9 +45,23 @@
                 <type>pom</type>
                 <scope>import</scope>
             </dependency>
+            <dependency>
+                <groupId>org.mybatis.spring.boot</groupId>
+                <artifactId>mybatis-spring-boot-starter</artifactId>
+                <version>2.1.2</version>
+                <type>pom</type>
+                <scope>import</scope>
+            </dependency>
+            <dependency>
+                <groupId>org.mybatis.spring.boot</groupId>
+                <artifactId>mybatis-spring-boot-starter</artifactId>
+            </dependency>
+            <dependency>
+                <groupId>mysql</groupId>
+                <artifactId>mysql-connector-java</artifactId>
+            </dependency>
         </dependencies>
     </dependencyManagement>
-    ​
     <build>
         <plugins>
             <plugin>
@@ -63,6 +74,4 @@
             </plugin>
         </plugins>
     </build>
-    ​
-
 </project>
